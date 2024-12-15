@@ -5,7 +5,15 @@ on:
 
 
 jobs:
+  monolith-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run a one-line script
+        run: echo Hello, world!
   oao-build:
+    needs: [monolith-build]
     runs-on: ubuntu-latest
 
     steps:
@@ -13,6 +21,8 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
   banker-build:
+    needs: [monolith-build]
+
     runs-on: ubuntu-latest
 
     steps:
