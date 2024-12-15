@@ -5,17 +5,37 @@ on:
 
 
 jobs:
-  build:
+  oao-build:
     runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v4
       - name: Run a one-line script
         run: echo Hello, world!
-  deploy:
-    needs: [build]
+  bakner-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run a one-line script
+        run: echo Hello, world!
+  oao-package:
+    needs: [oao-build]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: echo job
+        run: sh demo.sh
+  banker-package:
+    needs: [banker-build]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: echo job
+        run: sh demo.sh
+  dev-deploy:
+    needs: [oao-package, banker-package]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
         run: sh demo.sh
