@@ -56,9 +56,7 @@ jobs:
     needs: [oao-package, banker-package]
     runs-on: ubuntu-latest
     steps:
-      with:
-      - uses: actions/checkout@v4
       - name: deploy
-        run: sh demo.sh
+        uses: actions/checkout@v4
         with:
           name: production
