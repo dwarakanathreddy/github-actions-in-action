@@ -6,6 +6,9 @@ on:
 
 
 jobs:
+  echo-job:
+    uses: dwarakanathreddy/workflows-reusable-test/echo.yml@main
+    
   monolith-build:
     runs-on: ubuntu-latest
 
