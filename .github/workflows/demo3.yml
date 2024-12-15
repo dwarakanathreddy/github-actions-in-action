@@ -7,7 +7,7 @@ on:
 
 jobs:
   echo-job:
-    uses: dwarakanathreddy/workflows-reusable-test/echo.yml@main
+    uses: dwarakanathreddy/workflows-reusable-test/.github/workflows/echo.yml@main
     
   monolith-build:
     runs-on: ubuntu-latest
