@@ -60,7 +60,6 @@ jobs:
         description: 'Environment to deploy'
         required: false
         default: 'staging'
-jobs:
   prod-deploy:
     needs: [oao-package, banker-package]
     runs-on: ubuntu-latest
