@@ -1,8 +1,9 @@
-name: demo3
+name: demo3 on main
 run-name: Pipeline run by @${{ github.actor }}
 on:
   push:
     branches: ["main", "master"]
+  workflow_dispatch:
 
 
 jobs:
