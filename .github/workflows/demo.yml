@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       NAME: HELLO
+      action: ${{vars.action}}
 
     steps:
       - uses: actions/checkout@v4
